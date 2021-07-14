@@ -115,7 +115,7 @@
 
         $("#propertyList").on('click', 'a.property-delete', function () {
             var id = $(this).parents("tr").attr('property-id');
-            if (confirm("Are you sure you want to delete this book")) {
+            if (confirm("Are you sure you want to delete this property")) {
                 deleteBook(id);
             }
             return false;
@@ -139,6 +139,7 @@
                 loadData(); // RELOAD THE BOOK DATA
                 $("#Property_listDate").val("");
                 $("#Property_bedroomCount").val("");
+                $("#Property_bathroomCount").val("")
                 $("#Property_address").val("");
                 $("#Property_isSold").val("");
             }).fail(function (response, status, xhr) {
