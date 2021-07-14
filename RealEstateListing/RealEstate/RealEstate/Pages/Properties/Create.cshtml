@@ -1,0 +1,54 @@
+﻿@page
+@model RealEstate.Pages.Properties.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Property</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Property.listDate" class="control-label"></label>
+                <input asp-for="Property.listDate" class="form-control" />
+                <span asp-validation-for="Property.listDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.bedroomCount" class="control-label"></label>
+                <input asp-for="Property.bedroomCount" class="form-control" />
+                <span asp-validation-for="Property.bedroomCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.bathroomCount" class="control-label"></label>
+                <input asp-for="Property.bathroomCount" class="form-control" />
+                <span asp-validation-for="Property.bathroomCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.address" class="control-label"></label>
+                <input asp-for="Property.address" class="form-control" />
+                <span asp-validation-for="Property.address" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Property.isSold" /> @Html.DisplayNameFor(model => model.Property.isSold)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
